@@ -26,7 +26,7 @@
   }
 
   function fx() {
-    for (var xs=document.querySelectorAll('[aria-label="List of spaces."] span[role="listitem"] span[role="presentation"][title]'),i=0,x,on;(x=xs[i]);i++) {
+    for (let xs=document.querySelectorAll('[aria-label="List of spaces."] span[role="listitem"] span[role="presentation"][title]'),i=0,x,on;(x=xs[i]);i++) {
       if (oldXnewName[on=x.getAttribute('title')]) {
         x.parentNode.parentNode.parentNode.firstElementChild.innerHTML=oldXnewName[on][0]
         x.firstElementChild.textContent=oldXnewName[on][1]
