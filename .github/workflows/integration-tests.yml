@@ -24,7 +24,7 @@ jobs:
         run: npx playwright test
       - id: playwright
         if: success()
-        run: echo "success=yes" >> "$GITHUB_OUTPUT
+        run: echo "success=yes" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@v3
         if: always()
         with:
