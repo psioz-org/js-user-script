@@ -18,9 +18,9 @@ test('test',async ({page}) => {
 
     await page.goto('https://jira.atlassian.com/')
     await page.getByRole('link',{name: 'Log in'}).nth(1).click()
-    await page.getByPlaceholder('Enter your email').fill('zev.zakaryan@gmail.com')
+    await page.getByPlaceholder('Enter your email').fill(process.env.ATLASSIAN_USER)
     await page.getByPlaceholder('Enter your email').press('Enter')
-    await page.getByPlaceholder('Enter password').fill('UnknownP@55')
+    await page.getByPlaceholder('Enter password').fill(process.env.ATLASSIAN_PASS)
     await page.getByPlaceholder('Enter password').press('Enter')
     await page.waitForNavigation() //Not work because multiple redirect
     await page.waitForSelector('[data-testid="recent-work-title"]')
