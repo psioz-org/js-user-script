@@ -1,4 +1,4 @@
-name: 'Integration Tests  '
+name: 'Integration Tests'
 on:
   schedule:
     - cron: 0/5 * * * *
@@ -24,24 +24,25 @@ jobs:
         run: npx playwright test
       - id: playwright
         if: success()
-        run: echo "success=yes" >> "$GITHUB_OUTPUT"
-      - name: Use that output
-        run: |
-          echo "the output is ${{ steps.playwright.outputs.success }}"
+        run: echo "success=yes" >> "$GITHUB_OUTPUT
       - uses: actions/upload-artifact@v3
         if: always()
         with:
           name: playwright-report
           path: playwright-report/
-          retention-days: 30
+          retention-days: 30"
+      - if: ${{ steps.playwright.outputs.success!='yes' }}
+        run: |
+          exit 1
   badge:
     runs-on: ubuntu-latest
     needs: test
     steps:
       - name: use data
         run: |
-          echo "the output is ${{ needs.test.outputs.playwright_success }}"
-          echo "the output is ${{ needs.test.outputs.success }}"
+          echo "This works ${{ needs.test.outputs.playwright_success }}"
+          echo "Not works ${{ needs.test.outputs.success }}"
+          echo "Works? ${{ needs.test.outputs.success }}"
       - id: echo1
         if: ${{ needs.test.outputs.playwright_success=='yes' }}
         run: echo "test success"
