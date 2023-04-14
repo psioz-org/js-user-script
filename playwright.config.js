@@ -35,7 +35,7 @@ module.exports=defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: process.env.BROWSER_NAME,
+      name: process.env.BROWSER_TYPE,
       use: {...devices[process.env.BROWSER_TYPE]},
     },
 

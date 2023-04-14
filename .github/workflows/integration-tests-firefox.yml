@@ -1,4 +1,4 @@
-name: Chrome
+name: Firefox
 on:
   push:
     branches: ['main']
@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  BROWSER_TYPE: Desktop Chrome
+  BROWSER_TYPE: Desktop Firefox
 
 jobs:
   test:

@@ -1,15 +1,15 @@
-name: Chrome
+name: Safari
 on:
   push:
     branches: ['main']
   pull_request:
     branches: ['main']
   schedule:
-    - cron: '0 */1 * * *'
+    - cron: 0 */1 * * *
   workflow_dispatch:
 
 env:
-  BROWSER_TYPE: Desktop Chrome
+  BROWSER_TYPE: Desktop Safari
 
 jobs:
   test:

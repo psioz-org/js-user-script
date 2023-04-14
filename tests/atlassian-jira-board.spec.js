@@ -1,8 +1,6 @@
 import {test,expect} from '@playwright/test'
 test('test',async ({page}) => {
-  console.log('BROWSER_NAME2:',process.env.BROWSER_NAME2)
-  console.log('GITHUB_ACTION',process.env.GITHUB_ACTION)
-  //try {
+  // Don't try catch, it'll not return error to GitHub.
   // - Show:
   // Story own by me and I'm in subtask
   // Story own by me but no me in subtask
@@ -48,7 +46,4 @@ test('test',async ({page}) => {
     }
   }
   await expect(visibleHeader).toStrictEqual({})
-  //} catch (e) {
-  //  console.log('err',e)
-  //}
 })
