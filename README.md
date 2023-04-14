@@ -8,3 +8,5 @@
 [![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=zev-zakaryan_go-test-integration&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=zev-zakaryan_go-test-integration)
 [![Lines of Code](https://sonarcloud.io/api/project_badges/measure?project=zev-zakaryan_go-test-integration&metric=ncloc)](https://sonarcloud.io/summary/new_code?id=zev-zakaryan_go-test-integration)
 [![Technical Debt](https://sonarcloud.io/api/project_badges/measure?project=zev-zakaryan_go-test-integration&metric=sqale_index)](https://sonarcloud.io/summary/new_code?id=zev-zakaryan_go-test-integration)
+
+My user script with automated integration testing by cron
