@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 env:
-  BROWSER_NAME: ${{ env.GITHUB_ACTION }}
+  # fail  BROWSER_NAME: ${{ env.GITHUB_ACTION }}
   BROWSER_NAME2: ${{ vars.GITHUB_ACTION }}
   BROWSER_TYPE: Desktop Chrome
 
@@ -24,8 +24,7 @@ jobs:
       - id: test env
         run: |
           echo "env.GITHUB_ACTION: ${{ env.GITHUB_ACTION }}"
-          echo "env of env.BROWSER_NAME: ${{ env.BROWSER_NAME }}"
-          echo "env of env.BROWSER_NAME: ${{ env.BROWSER_NAME2 }}"
+          echo "env of vars.GITHUB_ACTION: ${{ env.BROWSER_NAME2 }}"
       - id: env
         run: |
           echo "${{ secrets.ATLASSIAN_USER }}"
