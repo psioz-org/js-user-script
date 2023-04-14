@@ -21,10 +21,6 @@ jobs:
       playwright_success: ${{ steps.playwright.outputs.success }}
     runs-on: ubuntu-latest
     steps:
-      - name: test env
-        run: |
-          echo "env.GITHUB_ACTION: ${{ env.GITHUB_ACTION }}"
-          echo "env of vars.GITHUB_ACTION: ${{ env.BROWSER_NAME2 }}"
       - id: env
         run: |
           echo "${{ secrets.ATLASSIAN_USER }}"
