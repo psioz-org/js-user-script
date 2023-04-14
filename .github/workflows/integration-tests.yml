@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
 jobs:
   test:
-    environment: main
+    # environment: main # need this to use environment secrets i.e. settings > environments. Value here usually is production, staging, or development as you set in settings.
     timeout-minutes: 60
     outputs:
       playwright_success: ${{ steps.playwright.outputs.success }}
