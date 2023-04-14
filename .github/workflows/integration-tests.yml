@@ -12,8 +12,8 @@ jobs:
     steps:
       - id: env
         run: |
-          echo "${{ env.ATLASSIAN_USER }}"
-          echo "${{ env.ATLASSIAN_PASS }}"
+          echo "${{ secrets.ATLASSIAN_USER }}"
+          echo "${{ secrets.ATLASSIAN_PASS }}"
       - uses: actions/checkout@v3
         with:
           ref: main
@@ -26,6 +26,9 @@ jobs:
         run: npx playwright install --with-deps
       - name: Run Playwright tests
         run: npx playwright test
+        env:
+          ATLASSIAN_USER: ${{ secrets.ATLASSIAN_USER }}
+          ATLASSIAN_PASS: ${{ secrets.ATLASSIAN_PASS }}
 #       - id: playwright #Example using outputs
 #         if: success()
 #         run: echo "success=yes" >> "$GITHUB_OUTPUT"
