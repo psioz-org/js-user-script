@@ -11,7 +11,7 @@ env:
 
 jobs:
   test:
-    if: \!startsWith(github.head_ref, 'release')
+    if: "!startsWith(github.head_ref, 'release')"
     timeout-minutes: 60
     outputs:
       playwright_success: ${{ steps.playwright.outputs.success }}
