@@ -1,7 +1,7 @@
-name: GitHub Actions Testing ✅
+name: 'Integration Tests  '
 on:
   schedule:
-    - cron: 6 * * * *
+    - cron: 8 * * * *
 jobs:
   test:
     timeout-minutes: 60
