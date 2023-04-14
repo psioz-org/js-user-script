@@ -39,7 +39,7 @@ test('test',async ({page}) => {
       const x=await xs.nth(i)
       const text=await x.evaluate(p => p.childNodes[p.childNodes.length-1].textContent)
       if (visibleHeader[text]) {
-        delete visibleHeader[text]
+        //delete visibleHeader[text]
         await expect(x).toBeVisible()
       } else {
         await expect(x).toBeHidden()
