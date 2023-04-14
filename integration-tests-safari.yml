@@ -1,4 +1,4 @@
-name: Integration Tests
+name: Safari
 on:
   push:
     branches: ['main']
@@ -7,6 +7,10 @@ on:
   schedule:
     - cron: '0/10 * * * *'
   workflow_dispatch:
+
+env:
+  BROWSER_TYPE: Desktop Safari
+
 jobs:
   test:
     # environment: main # need this to use environment secrets i.e. settings > environments. Value here usually is production, staging, or development as you set in settings.
@@ -34,30 +38,29 @@ jobs:
         env:
           ATLASSIAN_USER: ${{ secrets.ATLASSIAN_USER }}
           ATLASSIAN_PASS: ${{ secrets.ATLASSIAN_PASS }}
-#       - id: playwright #Example using outputs
-#         if: success()
-#         run: echo "success=yes" >> "$GITHUB_OUTPUT"
+      # - id: playwright #Example using outputs
+      #   if: success()
+      #   run: echo "success=yes" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@v3
         if: always()
         with:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-# Example using outputs in another jobs
-#   badge:
-#     runs-on: ubuntu-latest
-#     needs: test
-#     steps:
-#       - name: use data
-#         run: |
-#           echo "This works ${{ needs.test.outputs.playwright_success }}"
-#           echo "Not works ${{ needs.test.outputs.success }}"
-#           echo "Not works2 ${{ needs.test.steps.playwright.outputs.success }}"
-#       - id: echo1
-#         if: ${{ needs.test.outputs.playwright_success=='yes' }}
-#         run: echo "test success"
-#       - id: echo2
-#         if: ${{ needs.test.outputs.playwright_success!='yes' }}
-#         run: |
-#           echo "test fail"
-#           exit 1
+  # badge: # Example using outputs in another jobs
+  #   runs-on: ubuntu-latest
+  #   needs: test
+  #   steps:
+  #     - name: use data
+  #       run: |
+  #         echo "This works ${{ needs.test.outputs.playwright_success }}"
+  #         echo "Not works ${{ needs.test.outputs.success }}"
+  #         echo "Not works2 ${{ needs.test.steps.playwright.outputs.success }}"
+  #     - id: echo1
+  #       if: ${{ needs.test.outputs.playwright_success=='yes' }}
+  #       run: echo "test success"
+  #     - id: echo2
+  #       if: ${{ needs.test.outputs.playwright_success!='yes' }}
+  #       run: |
+  #         echo "test fail"
+  #         exit 1
