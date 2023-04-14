@@ -2,6 +2,7 @@ name: 'Integration Tests  '
 on:
   schedule:
     - cron: 0/5 * * * *
+  workflow_dispatch:
 jobs:
   test:
     timeout-minutes: 60
