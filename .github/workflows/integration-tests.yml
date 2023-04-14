@@ -1,7 +1,7 @@
 name: 'Integration Tests'
 on:
   schedule:
-    - cron: 0/5 * * * *
+    - cron: '0/5 * * * *'
   workflow_dispatch:
 jobs:
   test:
@@ -22,18 +22,16 @@ jobs:
         run: npx playwright install --with-deps
       - name: Run Playwright tests
         run: npx playwright test
-      - id: playwright
-        if: success()
-        run: echo "success=yes" >> "$GITHUB_OUTPUT"
+#       - id: playwright #Example using outputs
+#         if: success()
+#         run: echo "success=yes" >> "$GITHUB_OUTPUT"
       - uses: actions/upload-artifact@v3
         if: always()
         with:
           name: playwright-report
           path: playwright-report/
-          retention-days: 30"
-      - if: ${{ steps.playwright.outputs.success!='yes' }}
-        run: |
-          exit 1
+          retention-days: 30
+# Example using outputs in another jobs
 #   badge:
 #     runs-on: ubuntu-latest
 #     needs: test
