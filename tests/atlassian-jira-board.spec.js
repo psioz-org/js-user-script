@@ -1,6 +1,6 @@
 import {test,expect} from '@playwright/test'
 test('test',async ({page}) => {
-  try {
+  //try {
     // - Show:
     // Story own by me and I'm in subtask
     // Story own by me but no me in subtask
@@ -46,7 +46,7 @@ test('test',async ({page}) => {
       }
     }
     await expect(visibleHeader).toStrictEqual({})
-  } catch (e) {
-    console.log('err',e)
-  }
+  //} catch (e) {
+  //  console.log('err',e)
+  //}
 })
