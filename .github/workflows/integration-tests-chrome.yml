@@ -21,7 +21,7 @@ jobs:
       playwright_success: ${{ steps.playwright.outputs.success }}
     runs-on: ubuntu-latest
     steps:
-      - id: test env
+      - name: test env
         run: |
           echo "env.GITHUB_ACTION: ${{ env.GITHUB_ACTION }}"
           echo "env of vars.GITHUB_ACTION: ${{ env.BROWSER_NAME2 }}"
