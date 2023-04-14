@@ -5,6 +5,7 @@ on:
   workflow_dispatch:
 jobs:
   test:
+    environment: main
     timeout-minutes: 60
     outputs:
       playwright_success: ${{ steps.playwright.outputs.success }}
