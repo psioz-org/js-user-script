@@ -34,20 +34,20 @@ jobs:
       - if: ${{ steps.playwright.outputs.success!='yes' }}
         run: |
           exit 1
-  badge:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: use data
-        run: |
-          echo "This works ${{ needs.test.outputs.playwright_success }}"
-          echo "Not works ${{ needs.test.outputs.success }}"
-          echo "Works3 ${{ needs.test.steps.playwright.outputs.success }}"
-      - id: echo1
-        if: ${{ needs.test.outputs.playwright_success=='yes' }}
-        run: echo "test success"
-      - id: echo2
-        if: ${{ needs.test.outputs.playwright_success!='yes' }}
-        run: |
-          echo "test fail"
-          exit 1
+#   badge:
+#     runs-on: ubuntu-latest
+#     needs: test
+#     steps:
+#       - name: use data
+#         run: |
+#           echo "This works ${{ needs.test.outputs.playwright_success }}"
+#           echo "Not works ${{ needs.test.outputs.success }}"
+#           echo "Not works2 ${{ needs.test.steps.playwright.outputs.success }}"
+#       - id: echo1
+#         if: ${{ needs.test.outputs.playwright_success=='yes' }}
+#         run: echo "test success"
+#       - id: echo2
+#         if: ${{ needs.test.outputs.playwright_success!='yes' }}
+#         run: |
+#           echo "test fail"
+#           exit 1
