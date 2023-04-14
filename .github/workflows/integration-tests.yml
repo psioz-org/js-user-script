@@ -42,7 +42,7 @@ jobs:
         run: |
           echo "This works ${{ needs.test.outputs.playwright_success }}"
           echo "Not works ${{ needs.test.outputs.success }}"
-          echo "Works? ${{ needs.test.outputs.success }}"
+          echo "Works3 ${{ needs.test.steps.playwright.outputs.success }}"
       - id: echo1
         if: ${{ needs.test.outputs.playwright_success=='yes' }}
         run: echo "test success"
