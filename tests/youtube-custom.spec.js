@@ -1,4 +1,4 @@
-import {test,expect} from '@playwright/test'
+import {test} from '@playwright/test'
 test('test',async ({page}) => {
   //Just check script run fine and element exists
   await page.addInitScript({path: './src/youtube-custom.user.js'})
