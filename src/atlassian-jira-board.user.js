@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Atlassian Jira Board
 // @namespace    http://tampermonkey.net/
-// @version      1.1
+// @version      1.0
 // @description  Hide story that currently unrelated to user
 // @author       Zev Zakaryan
 // @match        https://*.atlassian.net/jira/software/c/projects/*/boards/*
@@ -11,7 +11,7 @@
 
 (function() {
   'use strict'
-  const sInterval=3000
+  const sInterval=4000
   const mustHaveCol=[1,2] //Start from 1
 
   //Ask popup add: if(confirm('Remove finished story'))
