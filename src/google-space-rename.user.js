@@ -12,7 +12,7 @@
 (function() {
   'use strict'
   //It's in https://chat.google.com/u/0/frame iframe of https://mail.google.com/*
-  //🚨,⚠️,📞,☎️,🌸,🤖,👥,📁,⭐,&nbsp;&nbsp;ℹ️,
+  // 🚨,⚠️,📞,☎️,🌸,🤖,👥,📁,⭐,&nbsp;&nbsp;ℹ️,
   const sInterval=1000
   const oldXnewName={
     'tech-alert-code-intelligence': ['🚨','Coin'],
