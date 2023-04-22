@@ -11,7 +11,7 @@
 
 (function() {
   'use strict'
-  const sInterval=1000
+  const sInterval=4000
   const mustHaveCol=[1,2] //Start from 1
 
   //Ask popup add: if(confirm('Remove finished story'))
