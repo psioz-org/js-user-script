@@ -17,7 +17,8 @@ jobs:
         run: |
           node --version
       - name: SonarCloud Scan
-        uses: SonarSource/sonarcloud-github-action@master
+        # Error this when node --version is v18.16.0 when use @master (work before): The version of node.js (12) you have used to run this analysis is deprecated and we stopped accepting it. Please update to at least node.js 14.
+        uses: SonarSource/sonarcloud-github-action@v1.9.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
